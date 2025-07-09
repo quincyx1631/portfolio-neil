@@ -14,26 +14,26 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Email",
     url: "dingcolneil16@gmail.com",
-    icon: "📧",
+    icon: "/email.svg",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/johndoe",
-    icon: "💼",
+    icon: "linkedin.svg",
   },
   {
     name: "GitHub",
     url: "https://github.com/johndoe",
-    icon: "🐱",
+    icon: "/github.svg",
   },
   {
     name: "Facebook",
     url: "https://twitter.com/johndoe",
-    icon: "🐦",
+    icon: "/facebook.svg",
   },
   {
     name: "Portfolio",
     url: "https://johndoe.dev",
-    icon: "🌐",
+    icon: "/portfolio.svg",
   },
 ]

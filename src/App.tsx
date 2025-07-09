@@ -323,7 +323,7 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Get In Touch
             </h2>
@@ -355,7 +355,13 @@ function App() {
                   className="text-gray-600 hover:text-blue-600 transition-colors flex flex-col items-center gap-2"
                   title={link.name}
                 >
-                  <span className="text-2xl">{link.icon}</span>
+                  <div className="w-10 h-10 mx-auto mb-2">
+                    <img
+                      src={link.icon || "../public/vite.svg"}
+                      alt={link.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                   <span className="text-sm">{link.name}</span>
                 </a>
               ))}
