@@ -24,7 +24,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
     url: "https://github.com/johndoe",
-    icon: "/github.svg",
+    icon: "🐱",
   },
   {
     name: "Facebook",

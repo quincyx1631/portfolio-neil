@@ -134,9 +134,13 @@ function App() {
                 >
                   Get In Touch
                 </button>
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                  Resume
-                </button>
+                <a
+                  href="/Resume.pdf"
+                  download="Resume.pdf"
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-block text-center"
+                >
+                  📥 Resume
+                </a>
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
