@@ -6,7 +6,7 @@ export const education: Education[] = [
     school: "Bulacan State University",
     year: "2021 - 2025",
     description:
-      "Focused on software engineering, algorithms, data structures, and web development. Graduated with Cum Laude (GPA: 1.5).",
+      "Focused on mobile development, game development, algorithms, data structures, and web development. Graduated with Cum Laude (GPA: 1.5).",
   },
 ]
 
@@ -18,22 +18,12 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/johndoe",
+    url: "www.linkedin.com/in/neilbryandingcol",
     icon: "linkedin.svg",
   },
   {
     name: "GitHub",
-    url: "https://github.com/johndoe",
+    url: "https://github.com/quincyx1631",
     icon: "/github.svg",
-  },
-  {
-    name: "Facebook",
-    url: "https://twitter.com/johndoe",
-    icon: "/facebook.svg",
-  },
-  {
-    name: "Portfolio",
-    url: "https://johndoe.dev",
-    icon: "/portfolio.svg",
   },
 ]

@@ -131,7 +131,7 @@ export const skills: Skill[] = [
     icon: "/postman.svg",
   },
   {
-    name: "WinForms",
+    name: "Window Forms",
     category: "tools",
     icon: "/winforms.png",
   },

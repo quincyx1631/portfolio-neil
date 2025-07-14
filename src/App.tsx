@@ -7,7 +7,7 @@ import { education, socialLinks } from "./data/personal";
 import type { SkillCategory } from "./types";
 
 function App() {
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("name");
   const [activeSkillCategory, setActiveSkillCategory] =
     useState<SkillCategory>("all");
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "skills", "projects", "education", "contact"];
+      const sections = ["name", "skills", "projects", "education", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -66,7 +66,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <button
-              onClick={() => scrollToSection("hero")}
+              onClick={() => scrollToSection("name")}
               className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
             >
               Neil Bryan Dingcol
@@ -93,7 +93,7 @@ function App() {
                 className="text-sm border border-gray-300 rounded px-2 py-1"
                 value={activeSection}
               >
-                <option value="hero">Home</option>
+                <option value="name">Home</option>
                 {navItems.map((item) => (
                   <option key={item.id} value={item.id}>
                     {item.label}
@@ -106,7 +106,7 @@ function App() {
       </nav>
 
       {/* Main Section */}
-      <section id="hero" className="pt-16 min-h-screen flex items-center">
+      <section id="name" className="pt-16 min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -339,7 +339,7 @@ function App() {
             </p>
             <div className="flex justify-center space-x-6 mb-8">
               <a
-                href="mailto:john.doe@example.com"
+                href="dingcolneil@gmail.com"
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
               >
                 Send Email
@@ -373,7 +373,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 John Doe. All rights reserved.</p>
+          <p>&copy; 2025 Neil Bryan Dingcol. All rights reserved.</p>
         </div>
       </footer>
     </div>

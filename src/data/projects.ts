@@ -2,23 +2,23 @@ import type { Project } from "../types"
 
 export const projects: Project[] = [
   {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
+    id: "capstone-project",
+    title: "JAVAESCAPE: AN INTERACTIVE APPROACH TO PROGRAMMING THROUGH E-LEARNING",
     description:
-      "A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, payment processing, admin dashboard, inventory management, and real-time order tracking.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT", "Express.js"],
-    github: "https://github.com/johndoe/ecommerce-platform",
-    demo: "https://ecommerce-demo.vercel.app",
+      "A 3D game-based learning platform built with Unity (C#) and Azure PlayFab, designed to teach Java programming through interactive puzzles, quizzes, and level-based challenges.",
+    technologies: ["C#", "Unity", "Azure Playfab", "Blender"],
+    github: "https://github.com/quincyx1631/JavaEscape",
+    demo: "none",
     featured: true,
   },
   {
-    id: "task-management-app",
-    title: "Task Management App",
+    id: "MangaHilaw - Manga Reading Website",
+    title: "MangaHilaw - Manga Reading Website",
     description:
-      "A collaborative task management tool with real-time updates, drag-and-drop functionality, team collaboration features, and advanced filtering options.",
-    technologies: ["React", "TypeScript", "Socket.io", "PostgreSQL", "Node.js"],
-    github: "https://github.com/johndoe/task-manager",
-    demo: "https://taskmanager-demo.vercel.app",
+      "A full stack manga reading platform built with Next.js, Express.js, Tailwind CSS, and Supabase, featuring user authentication, bookmarking, and custom manga lists via a public REST API.",
+    technologies: ["NextJS", "TypeScript", "ExpressJS", "PostgreSQL", "Rest API", "Tailwind CSS"],
+    github: "https://github.com/quincyx1631/MangaHilaw",
+    demo: "https://manga-hilaw.vercel.app/",
     featured: true,
   },
   {
@@ -30,36 +30,6 @@ export const projects: Project[] = [
     github: "https://github.com/johndoe/weather-dashboard",
     demo: "https://weather-demo.vercel.app",
     featured: false,
-  },
-  {
-    id: "blog-cms",
-    title: "Blog CMS",
-    description:
-      "A content management system for bloggers with markdown support, SEO optimization, comment system, and analytics dashboard.",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth"],
-    github: "https://github.com/johndoe/blog-cms",
-    demo: "https://blog-cms-demo.vercel.app",
-    featured: false,
-  },
-  {
-    id: "crypto-tracker",
-    title: "Cryptocurrency Tracker",
-    description:
-      "Real-time cryptocurrency price tracking application with portfolio management, price alerts, and detailed market analysis.",
-    technologies: ["React", "Redux", "CoinGecko API", "Chart.js", "Firebase"],
-    github: "https://github.com/johndoe/crypto-tracker",
-    demo: "https://crypto-tracker-demo.vercel.app",
-    featured: false,
-  },
-  {
-    id: "social-media-app",
-    title: "Social Media App",
-    description:
-      "A social networking platform with real-time messaging, post sharing, user profiles, and advanced privacy controls.",
-    technologies: ["React Native", "Node.js", "MongoDB", "Socket.io", "AWS S3"],
-    github: "https://github.com/johndoe/social-app",
-    demo: "https://social-demo.vercel.app",
-    featured: true,
   },
 ]
 
