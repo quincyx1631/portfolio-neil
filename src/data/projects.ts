@@ -12,19 +12,26 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/placeholder.svg",
-        alt: "E-commerce homepage screenshot",
+        src: "/javaescape-main-menu.jpg",
+        alt: "Main menu screenshot",
       },
       {
         type: "image",
-        src: "/placeholder.svg",
-        alt: "Admin dashboard screenshot",
+        src: "/javaescape-dialog.jpg",
+        alt: "dialogue screenshot",
       },  
       {
         type: "image",
-        src: "/placeholder.svg",
-        alt: "Admin dashboard screenshot",
+        src: "/javaescape-lvl5.jpg",
+        alt: "level 5 screenshot",
       },  
+      {
+        type: "video",
+        src: "/JAVAESCAPE.mp4",
+        thumbnail: "/javaescape-thumbnail.jpg",
+        alt: "video demo of the game",
+      },
+
     ],
     featured: true,
   },
