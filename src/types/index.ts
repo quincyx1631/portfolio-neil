@@ -4,6 +4,13 @@ export interface Skill {
   icon: string
 }
 
+export interface ProjectMedia {
+  type?: "image" | "video"
+  src?: string
+  alt?: string
+  thumbnail?: string 
+}
+
 export interface Project {
   id: string
   title: string
@@ -11,7 +18,7 @@ export interface Project {
   technologies: string[]
   github: string
   demo: string
-  image?: string
+  media: ProjectMedia[]
   featured?: boolean
 }
 

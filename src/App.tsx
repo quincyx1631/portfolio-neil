@@ -5,6 +5,7 @@ import { skills, skillCategories } from "./data/skills";
 import { projects } from "./data/projects";
 import { education, socialLinks } from "./data/personal";
 import type { SkillCategory } from "./types";
+import { MediaGallery } from "./components/media";
 
 function App() {
   const [activeSection, setActiveSection] = useState("name");
@@ -226,7 +227,12 @@ function App() {
                 key={project.id}
                 className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+                {/* Media Gallery */}
+                <div className="relative">
+                  <MediaGallery
+                    media={project.media}
+                    projectTitle={project.title}
+                  />
                   {project.featured && (
                     <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-2 py-1 rounded text-xs font-medium">
                       Featured

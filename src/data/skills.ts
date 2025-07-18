@@ -42,6 +42,11 @@ export const skills: Skill[] = [
     category: "frontend",
     icon: "/net.svg",
   },
+  {
+    name: "Vite",
+    category: "frontend",
+    icon: "/vite.svg",
+  },
 
   // Backend
   {

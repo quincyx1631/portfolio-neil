@@ -9,6 +9,23 @@ export const projects: Project[] = [
     technologies: ["C#", "Unity", "Azure Playfab", "Blender"],
     github: "https://github.com/quincyx1631/JavaEscape",
     demo: "none",
+    media: [
+      {
+        type: "image",
+        src: "/placeholder.svg",
+        alt: "E-commerce homepage screenshot",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg",
+        alt: "Admin dashboard screenshot",
+      },  
+      {
+        type: "image",
+        src: "/placeholder.svg",
+        alt: "Admin dashboard screenshot",
+      },  
+    ],
     featured: true,
   },
   {
@@ -19,16 +36,73 @@ export const projects: Project[] = [
     technologies: ["NextJS", "TypeScript", "ExpressJS", "PostgreSQL", "Rest API", "Tailwind CSS"],
     github: "https://github.com/quincyx1631/MangaHilaw",
     demo: "https://manga-hilaw.vercel.app/",
+    media: [
+      {
+        type: "image",
+        src: "/m-homepage.png",
+        alt: "Manga reading homepage screenshot",
+      },
+      {
+        type: "image",
+        src: "/m-browse.png",
+        alt: "Manga browsing page screenshot",
+      },
+      {
+        type: "image",
+        src: "/m-read.png",
+        alt: "Manga reading page screenshot",
+      },
+    ],
     featured: true,
   },
   {
-    id: "weather-dashboard",
-    title: "Weather Dashboard",
+    id: "timezone-tracker",
+    title: "TZone Tracker",
     description:
-      "A responsive weather application that displays current weather and forecasts for multiple cities with interactive charts, maps, and weather alerts.",
-    technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-    github: "https://github.com/johndoe/weather-dashboard",
+      "A full stack web app for remote teams to track each member's timezone, current availability, and best meeting times.",
+    technologies: ["React", "Vite", "ExpressJS", "Tailwind CSS", "PostgreSQL"],
+    github: "https://github.com/quincyx1631/TzoneTracker",
     demo: "https://weather-demo.vercel.app",
+    media: [
+      {
+        type: "image",
+        src: "/placeholder.svg",
+        alt: "E-commerce homepage screenshot",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg",
+        alt: "Admin dashboard screenshot",
+      },
+      {
+        type: "video",
+        src: "/placeholder.svg",
+        thumbnail: "/placeholder.svg",
+        alt: "E-commerce platform demo video",
+      },
+    ],
+    featured: false,
+  },
+  {
+    id: "pharmacy-PAF",
+    title: "Pharmacy Purchase Approval System (PAF)",
+    description:
+      "A Desktop Application for Pharmacy Purchase Approval System (PAF) built with C# and SQL Server, designed to streamline purchase requests and approvals in pharmacies.",
+    technologies: ["C#", "SQL", "Windows Forms", "PostgreSQL"],
+    github: "https://github.com/quincyx1631/TzoneTracker",
+    demo: "https://weather-demo.vercel.app",
+    media: [
+      {
+        type: "image",
+        src: "/paf-page1.png",
+        alt: "homepage screenshot",
+      },
+      {
+        type: "image",
+        src: "/paf-page2.png",
+        alt: "2nd page screenshot",
+      },
+    ],
     featured: false,
   },
 ]
