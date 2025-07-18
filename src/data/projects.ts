@@ -27,7 +27,7 @@ export const projects: Project[] = [
       },  
       {
         type: "video",
-        src: "/JAVAESCAPE.mp4",
+        src: "/Javaescape.mp4",
         thumbnail: "/javaescape-thumbnail.jpg",
         alt: "video demo of the game",
       },
@@ -101,12 +101,12 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/paf-page1.png",
+        src: "/pafpage1.png",
         alt: "homepage screenshot",
       },
       {
         type: "image",
-        src: "/paf-page2.png",
+        src: "/pafpage2.png",
         alt: "2nd page screenshot",
       },
     ],
