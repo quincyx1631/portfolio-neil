@@ -27,7 +27,7 @@ export const projects: Project[] = [
       },  
       {
         type: "video",
-        src: "/Javaescape.mp4",
+        src: "/JAVAESCAPE.mp4",
         thumbnail: "/javaescape-thumbnail.jpg",
         alt: "video demo of the game",
       },

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { skills, skillCategories } from "./data/skills";
 import { projects } from "./data/projects";
@@ -23,14 +21,12 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["name", "skills", "projects", "education", "contact"];
-      const scrollPosition = window.scrollY + 100;
-
+      const scrollPosition = window.scrollY + 120;
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-
           if (
             scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
@@ -41,7 +37,6 @@ function App() {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -61,14 +56,14 @@ function App() {
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-blue-100 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <button
               onClick={() => scrollToSection("name")}
-              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              className="text-2xl font-extrabold tracking-tight text-blue-700 hover:text-blue-900 transition-colors"
             >
               Neil Bryan Dingcol
             </button>
@@ -77,9 +72,9 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                  className={`text-base font-semibold transition-colors px-2 py-1 rounded-lg hover:bg-blue-50 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200 ${
                     activeSection === item.id
-                      ? "text-blue-600"
+                      ? "text-blue-700 bg-blue-100"
                       : "text-gray-700"
                   }`}
                 >
@@ -91,7 +86,7 @@ function App() {
             <div className="md:hidden">
               <select
                 onChange={(e) => scrollToSection(e.target.value)}
-                className="text-sm border border-gray-300 rounded px-2 py-1"
+                className="text-base border border-blue-200 rounded-lg px-3 py-2 bg-white shadow-sm focus:ring-2 focus:ring-blue-200"
                 value={activeSection}
               >
                 <option value="name">Home</option>
@@ -106,49 +101,56 @@ function App() {
         </div>
       </nav>
 
-      {/* Main Section */}
-      <section id="name" className="pt-16 min-h-screen flex items-center">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section
+        id="name"
+        className="pt-28 min-h-[80vh] flex items-center relative overflow-hidden"
+      >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-60 absolute -top-32 -left-32" />
+          <div className="w-72 h-72 bg-blue-200 rounded-full blur-2xl opacity-40 absolute bottom-0 right-0" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
                 Hi, I'm{" "}
-                <span className="text-blue-600">Neil Bryan Dingcol</span>
+                <span className="text-blue-700">Neil Bryan Dingcol</span>
               </h1>
-              <h2 className="text-xl sm:text-2xl text-gray-600 mb-6">
-                Software Developer
+              <h2 className="text-2xl sm:text-3xl text-blue-600 font-semibold mb-6">
+                Web Developer
               </h2>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                I developed responsive, user-friendly web applications with
-                modern technologies. Let's build something amazing together.
+              <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-xl">
+                I build responsive, user-friendly web applications with modern
+                technologies. Let's create something amazing together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  className="bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-blue-800 transition-colors"
                 >
                   View My Work
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                  className="border-2 border-blue-700 text-blue-700 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
                 >
                   Get In Touch
                 </button>
                 <a
                   href="/Resume.pdf"
                   download="Resume.pdf"
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-block text-center"
+                  className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-8 py-3 rounded-xl font-semibold shadow hover:from-blue-700 hover:to-blue-500 transition-colors inline-block text-center"
                 >
                   📥 Resume
                 </a>
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-blue-100">
+              <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden border-8 border-blue-200 shadow-lg bg-white">
                 <img
                   src="/profile.JPG"
-                  alt="John Doe"
+                  alt="Neil Bryan Dingcol"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -158,10 +160,10 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
+      <section id="skills" className="py-20 bg-white/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Skills
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -175,33 +177,36 @@ function App() {
               <button
                 key={category.id}
                 onClick={() => setActiveSkillCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-5 py-2 rounded-full text-base font-semibold transition-colors shadow-sm border-2 ${
                   activeSkillCategory === category.id
-                    ? "bg-blue-600 text-white"
-                    : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                    ? "bg-blue-700 text-white border-blue-700"
+                    : "bg-white text-blue-700 border-blue-200 hover:bg-blue-50"
                 }`}
               >
-                {category.label} ({category.count})
+                {category.label}{" "}
+                <span className="font-normal">({category.count})</span>
               </button>
             ))}
           </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredSkills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md transition-all duration-300 hover:scale-105"
+                className="bg-white p-6 rounded-2xl shadow-md border border-blue-100 text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <div className="w-12 h-12 mx-auto mb-3">
+                <div className="w-14 h-14 mx-auto mb-3 flex items-center justify-center">
                   <img
                     src={skill.icon || "../public/vite.svg"}
                     alt={skill.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-gray-800 font-medium">{skill.name}</span>
-                <div className="text-xs text-gray-500 mt-1 capitalize">
+                <span className="text-gray-900 font-semibold text-lg">
+                  {skill.name}
+                </span>
+                <div className="text-xs text-blue-600 mt-1 capitalize font-medium">
                   {skill.category}
                 </div>
               </div>
@@ -214,18 +219,18 @@ function App() {
       <section id="projects" className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Projects
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A selection of my recent work and personal projects
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
             {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl shadow-md border border-blue-100 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
               >
                 {/* Media Gallery */}
                 <div className="relative">
@@ -234,34 +239,34 @@ function App() {
                     projectTitle={project.title}
                   />
                   {project.featured && (
-                    <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-2 py-1 rounded text-xs font-medium">
+                    <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-2 py-1 rounded text-xs font-bold shadow">
                       Featured
                     </div>
                   )}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-4 text-base leading-relaxed flex-1">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                        className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 mt-auto">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                      className="text-blue-700 hover:text-blue-900 font-semibold text-sm underline"
                     >
                       GitHub
                     </a>
@@ -269,7 +274,7 @@ function App() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                      className="text-blue-700 hover:text-blue-900 font-semibold text-sm underline"
                     >
                       Live Demo
                     </a>
@@ -284,7 +289,7 @@ function App() {
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAllProjects(!showAllProjects)}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                className="bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-blue-800 transition-colors"
               >
                 {showAllProjects
                   ? `Show Less Projects`
@@ -296,10 +301,10 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-50">
+      <section id="education" className="py-20 bg-white/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Education
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -310,15 +315,15 @@ function App() {
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-sm border border-gray-200"
+                className="bg-white p-8 rounded-2xl shadow-md border border-blue-100"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {edu.degree}
-                  </h3>
-                  <span className="text-blue-600 font-medium">{edu.year}</span>
-                </div>
-                <h4 className="text-lg text-gray-700 mb-3">{edu.school}</h4>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {edu.degree}
+                </h3>
+                <h4 className="text-lg text-blue-700 mb-2">{edu.school}</h4>
+                <span className="text-blue-600 font-semibold text-lg block mb-2">
+                  {edu.year}
+                </span>
                 <p className="text-gray-600">{edu.description}</p>
               </div>
             ))}
@@ -330,7 +335,7 @@ function App() {
       <section id="contact" className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Get In Touch
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -345,30 +350,30 @@ function App() {
             </p>
             <div className="flex justify-center space-x-6 mb-8">
               <a
-                href="dingcolneil@gmail.com"
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                href="mailto:dingcolneil@gmail.com"
+                className="bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold shadow hover:bg-blue-800 transition-colors"
               >
                 Send Email
               </a>
             </div>
-            <div className="flex justify-center space-x-8">
+            <div className="flex justify-center space-x-8 flex-wrap gap-y-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors flex flex-col items-center gap-2"
+                  className="text-gray-600 hover:text-blue-700 transition-colors flex flex-col items-center gap-2"
                   title={link.name}
                 >
-                  <div className="w-10 h-10 mx-auto mb-2">
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-blue-50 flex items-center justify-center shadow">
                     <img
                       src={link.icon || "../public/vite.svg"}
                       alt={link.name}
-                      className="w-full h-full object-contain"
+                      className="w-7 h-7 object-contain"
                     />
                   </div>
-                  <span className="text-sm">{link.name}</span>
+                  <span className="text-base font-semibold">{link.name}</span>
                 </a>
               ))}
             </div>
@@ -377,9 +382,11 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-blue-900 text-white py-8 mt-10 shadow-inner">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2025 Neil Bryan Dingcol. All rights reserved.</p>
+          <p className="text-lg font-semibold">
+            &copy; 2025 Neil Bryan Dingcol. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
