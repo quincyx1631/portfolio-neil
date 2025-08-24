@@ -73,19 +73,13 @@ export const projects: Project[] = [
     media: [
       {
         type: "image",
-        src: "/placeholder.svg",
-        alt: "E-commerce homepage screenshot",
+        src: "/tzone-homepage.png",
+        alt: "Timezone Tracker homepage screenshot",
       },
       {
         type: "image",
-        src: "/placeholder.svg",
-        alt: "Admin dashboard screenshot",
-      },
-      {
-        type: "video",
-        src: "/placeholder.svg",
-        thumbnail: "/placeholder.svg",
-        alt: "E-commerce platform demo video",
+        src: "/tzone-homepage2.png",
+        alt: "Timezone home screenshot 2",
       },
     ],
     featured: false,
